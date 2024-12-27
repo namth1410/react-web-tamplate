@@ -1,0 +1,43 @@
+$breakpoints: (
+  tablet: (
+    min: 768px,
+    max: 1024px
+  ),
+  fullHd: (
+    min: 1920px,
+    max: 2000px
+  ),
+  2K: (
+    min: 2000px,
+    max: 2600px
+  ),
+  4K: (
+    min: 3840px
+  )
+);
+
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin respond-to($breakpoint) {
+  $range: map-get($breakpoints, $breakpoint);
+
+  @if map-has-key($range, max) {
+    @media screen and (min-width: map-get($range, min)) and (max-width: map-get($range, max)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: map-get($range, min)) {
+      @content;
+    }
+  }
+}

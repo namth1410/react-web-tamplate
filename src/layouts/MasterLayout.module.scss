@@ -1,0 +1,15 @@
+.master_layout_content {
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.master_layout_content_with_header_visible {
+    height: calc(100vh - 70px);
+}
+
+@media screen and (min-width: 2600px) {
+    .master_layout_content_with_header_visible {
+        height: calc(100vh - 140px);
+    }
+}

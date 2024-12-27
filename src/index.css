@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
+  width: 100vw;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --primary-color: #1992cd;
+  --blue: #2667af;
+  --blue-secondary: #1992cd;
+  --scrollbar-thumb: #dadce0;
+  --blue-tertiary: #1992cd1a;
+  --bgc-primary: #ddeff8;
+  --text-color-primary: rgba(26, 25, 25, 0.7);
+  --black-text-secondary: #1a1919;
+  --red-primary: #ff0401;
+  --red-secondary: #ff04011a;
+  --gray-primary: #f7f7f7;
+  --gray-secondary: #e1e1e1;
+  --green-primary: #48cd3d;
+  --green-secondary: #ebfeea;
+  --warning-primary: #ff8a01;
+  --warning-secondary: #ff8a011a;
+  --border-radius-button: 12px;
+  --outlet-admin-padding: 1vw;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  padding: 0;
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+input:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+.no_scrollbar {
+  /* IE và Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    /* Chrome, Safari, Opera */
+    display: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Normal */
+@font-face {
+  font-family: "Gilroy";
+  src: url(./assets/fonts/gilroy/SVN-Gilroy-Medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Regular */
+@font-face {
+  font-family: "Gilroy";
+  src: url(./assets/fonts/gilroy/SVN-Gilroy-Regular.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: "Gilroy";
+  src: url(./assets/fonts/gilroy/SVN-Gilroy-Light.otf) format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Gilroy";
+  src: url(./assets/fonts/gilroy/SVN-Gilroy-Bold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: "Gilroy";
+  src: url(./assets/fonts/gilroy/SVN-Gilroy-Italic.otf) format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}

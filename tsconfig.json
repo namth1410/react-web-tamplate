@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "admin/*": ["admin/*"],
+      "appdata/*": ["appdata/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "hooks/*": ["hooks/*"],
+      "layouts/*": ["layouts/*"],
+      "main/*": ["main/*"],
+      "pages/*": ["pages/*"],
+      "routes/*": ["routes/*"],
+      "translation/*": ["translation/*"],
+      "types/*": ["types/*"],
+      "utils/*": ["utils/*"]
+    },
+    "target": "ES2018", // Mục tiêu biên dịch
+    "lib": ["dom", "dom.iterable", "esnext"], // Bao gồm các thư viện DOM và ES mới nhất
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "allowJs": true, // Cho phép sử dụng file .js
+    "checkJs": false, // Không kiểm tra kiểu trong file .js
+    "jsx": "react-jsx", // JSX tự động cho React 17+
+    "strict": true, // Bật chế độ strict của TypeScript
+    "module": "esnext", // Sử dụng mô-đun ESNext
+    "moduleResolution": "node", // Phương thức tìm kiếm mô-đun
+    "esModuleInterop": true, // Tương thích giữa ESModule và CommonJS
+    "allowSyntheticDefaultImports": true, // Cho phép import mặc định từ CommonJS
+    "forceConsistentCasingInFileNames": true, // Kiểm tra kiểu viết của tên file
+    "isolatedModules": true, // Kiểm tra từng file riêng biệt
+    "skipLibCheck": true, // Bỏ qua kiểm tra thư viện
+    "noEmit": true, // Không xuất file .js khi biên dịch
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist"] // Loại trừ các thư mục không cần thiết
+}
