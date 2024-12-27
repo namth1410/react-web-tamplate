@@ -1,8 +1,11 @@
 export enum NotificationStatus {
-  Pending = "pending",
   Sent = "sent",
   Read = "read",
-  Fail = "fail",
+}
+
+export enum NotificationType {
+  Immediate = "IMMEDIATE",
+  Scheduled = "SCHEDULED",
 }
 
 export interface NotificationResponse {

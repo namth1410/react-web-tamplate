@@ -1,0 +1,25 @@
+.content_with_header {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 250px);
+    height: 100vh;
+
+    .content {
+        height: 100%;
+        overflow: hidden;
+        z-index: 99;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+    .content_with_header {
+        width: calc(100vw - 350px);
+    }
+}
+
+@media screen and (min-width: 2600px) {
+    .content_with_header {
+        width: calc(100vw - 450px);
+    }
+}

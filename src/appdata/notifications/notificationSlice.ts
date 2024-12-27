@@ -7,6 +7,7 @@ import {
 import {
   NotificationResponse,
   NotificationStatus,
+  NotificationType,
 } from "types/notificationTypes";
 import axiosInstance from "utils/api";
 import { generateQueryParam } from "utils/urlEncode";
@@ -97,8 +98,6 @@ export const notificationsSlice = createSlice({
 });
 
 interface GetNotificationsParams extends BaseApiParams {
-  user_id?: string;
-  keywords?: string;
   status?: string;
 }
 
@@ -118,32 +117,32 @@ const getNotifications = createAsyncThunk<
 });
 
 interface PostNotificationsParams {
-  tenant_id: string;
   body: {
-    body: string;
-    receiver_id: string[];
-    sent_at: string;
     title: string;
+    message: string;
+    type: NotificationType;
+    scheduleAt: string;
+    senderId: number;
+    recipientIds: number[];
+    sendToAll: boolean;
   };
 }
 
-const postNotifications = createAsyncThunk<
-  NotificationResponse[],
-  PostNotificationsParams
->("notifications/postNotifications", async (params) => {
-  try {
-    const { tenant_id, body } = params;
+const postNotifications = createAsyncThunk<any, PostNotificationsParams>(
+  "notifications/postNotifications",
+  async (params) => {
+    try {
+      console.log("gui api");
+      console.log(params);
+      const { body } = params;
 
-    const respone = await axiosInstance.post(`/notifications`, body, {
-      headers: {
-        "x-tenant-id": tenant_id,
-      },
-    });
-    return respone.data;
-  } catch (error) {
-    throw new Error(error as any);
+      const respone = await axiosInstance.post(`/notifications`, body, {});
+      return respone.data;
+    } catch (error) {
+      throw new Error(error as any);
+    }
   }
-});
+);
 
 const getCountUnreadNotifications = createAsyncThunk(
   "notifications/getCountUnreadNotifications",

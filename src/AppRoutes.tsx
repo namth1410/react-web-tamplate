@@ -1,6 +1,8 @@
+import Admin from "admin/Admin";
 import { getMe } from "appdata/myself/myselfSlice";
 import { AppDispatch, RootState } from "appdata/store";
 import MasterLayout from "layouts/MasterLayout";
+import Home from "pages/home/Home";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
@@ -26,6 +28,8 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<MasterLayout />}>
+        <Route path="/home" element={<Home />} />
+        <Route path="/admin/*" element={<Admin />} />
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Route>

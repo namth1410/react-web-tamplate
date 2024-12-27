@@ -6,10 +6,21 @@ const axiosInstance = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true,
 });
 
 export const setupAxios = () => {
+  const accessToken =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJzdWIiOjQsInRva2VuVmVyc2lvbiI6MSwiaWF0IjoxNzM1MjkxNjEzLCJleHAiOjE3MzUyOTUyMTN9.J8pgp157Dn_-FyL2q2CboZogNPdEvn1nBAKOczLjnNE";
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      config.headers.Authorization = `Bearer ${accessToken}`;
+      return config;
+    },
+    (error) => {
+      // Xử lý lỗi trong request
+      return Promise.reject(error);
+    }
+  );
   axiosInstance.interceptors.response.use(
     (response: AxiosResponse) => {
       return response;
